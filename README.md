@@ -4,7 +4,7 @@ This project contains a Google Cloud Function (`reply_reviews.py`) that fetches 
 
 This Google Cloud Function is currently running for [Osha Thai Sushi Galleria restaurant](https://g.co/kgs/XbbB1ri) which is located in Allanta, Georgia. If you are in Atlanta, come try our foods!
 
-If you are interested in automating your business review replies, contact me(Chai) at chaisatien13@gmail.com
+If you are interested in automating your business review replies, contact me(Chai) at [LinkedLn](https://www.linkedin.com/in/chatchai-satienpattanakul-97aaa668) or chaisatien13@gmail.com
 
 ## Prerequisites
 
