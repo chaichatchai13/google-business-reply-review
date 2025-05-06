@@ -8,6 +8,7 @@ If you are interested in automating your business review replies, contact me(Cha
 
 ## Prerequisites
 
+- **Access to your Google businees API**: Here are all the steps to gain access to [Google Business Profile APIs](https://developers.google.com/my-business/content/prereqs#:~:text=To%20successfully%20create%20your%20first%20client%20application%2C%20you,an%20Organization%20account.%20Request%20access%20to%20the%20API)
 - **Python 3.11**: For local development.
 - **Google Cloud Project**: `YOUR_GCP_PROJECT_ID`.
 - **Service Accounts**:
@@ -116,7 +117,7 @@ If you are interested in automating your business review replies, contact me(Cha
 5. **Update Cloud Scheduler Job**:
    ```bash
    gcloud scheduler jobs update http reply-reviews-job \
-     --schedule="0 5 * * *" \
+     --schedule="0 0 * * *" \
      --uri="https://us-central1-YOUR_GCP_PROJECT_ID.cloudfunctions.net/reply-reviews?account_id=your-account-id&location_id=your-location-id&days=30" \
      --http-method=GET \
      --oidc-service-account-email=scheduler-sa@YOUR_GCP_PROJECT_ID.iam.gserviceaccount.com \
