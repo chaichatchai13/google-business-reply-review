@@ -219,7 +219,7 @@ async def generate_review_replies_batch(reviews: list, batch_size: int = 10) -> 
             if raw_content.endswith("```"):
                 raw_content = raw_content[:-3].strip()
             # Ensure valid JSON
-            batch_replies = json.loads(raw_content)
+            batch_replies = [json.loads(raw_content)]
             # Validate reply structure
             for reply in batch_replies:
                 if not isinstance(reply, dict) or "review_id" not in reply or "reply_text" not in reply:
