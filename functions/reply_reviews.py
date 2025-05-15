@@ -182,7 +182,7 @@ async def generate_review_replies_batch(reviews: list, batch_size: int = 10) -> 
         - Reflect the review’s tone (e.g., upbeat for positive, empathetic for negative).
         - For negative reviews, do not mention refunds, free items, or procedural steps like showing the reply to a manager. Focus on emotional reassurance and a better future visit.
         - Sign replies as "Osha Thai Sushi Galleria Team".
-        - Output a JSON array of objects with keys: review_id, reply_text.
+        - Output a JSON array of objects with keys: review_id, reply_text. Even there is only one object, return output as a JSON array of an object.
 
         ### Example Reviews and Replies:
         1. Review: "Sushi was amazing, Kim was great!" (5 stars, Reviewer: John Smith)
@@ -219,7 +219,7 @@ async def generate_review_replies_batch(reviews: list, batch_size: int = 10) -> 
             if raw_content.endswith("```"):
                 raw_content = raw_content[:-3].strip()
             # Ensure valid JSON
-            batch_replies = [json.loads(raw_content)]
+            batch_replies = json.loads(raw_content)
             # Validate reply structure
             for reply in batch_replies:
                 if not isinstance(reply, dict) or "review_id" not in reply or "reply_text" not in reply:
